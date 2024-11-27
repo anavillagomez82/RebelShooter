@@ -1,8 +1,9 @@
-#include <bits/stdc++.h> 
-#include <SFML/Graphics.hpp>
 #ifndef PLAYER_H
 #define PLAYER_H
+#include <bits/stdc++.h> 
+#include <SFML/Graphics.hpp>
 #include "GameEntity.h"
+#include <utility> // Para std::pair
 
 class Player : public GameEntity {
 public:
