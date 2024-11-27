@@ -1,4 +1,5 @@
 #include "Enemie.h"
+#include "GameEntity.h"
 
 Enemie::Enemie(Vector2f pos, Texture &texture){
     sprite.setTexture(texture);
@@ -10,8 +11,8 @@ Enemie::Enemie(Vector2f pos, Texture &texture){
     activado = false;
 }
 
-void Enemie::Update(Vector2f posPlayer,int dista){
-    dist=dista;
+void Enemie::Update(Vector2f posPlayer, int dista) override {
+    dist = dista;
     Movement(posPlayer);
     apuntarPlayer(posPlayer);
 }
@@ -37,10 +38,10 @@ void Enemie::TakeHp(){
 int Enemie::ConsultHp(){
     return Hp;
 }
-Vector2f Enemie::GetPosition(){
+Vector2f Enemie::GetPosition() const override {
     return sprite.getPosition();
 }
 
-void Enemie::draw(RenderTarget &rt, RenderStates rs) const{
-    rt.draw(sprite,rs);
+void Enemie::draw(RenderTarget &rt, RenderStates rs) const override {
+    rt.draw(sprite, rs);
 }
