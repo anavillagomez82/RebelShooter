@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #ifndef GAMEENTITY_H
 #define GAMEENTITY_H
+#include <utility> // Para std::pair
 using namespace sf;
 
 class GameEntity : public Drawable {
