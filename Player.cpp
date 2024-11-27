@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "GameEntity.h"
 
 Player :: Player(Texture &texture){
     sprite.setTexture(texture);
@@ -9,7 +10,7 @@ Player :: Player(Texture &texture){
     vel=2.5;
 }
 
-void Player :: Update(RenderWindow &rw, View &view){
+void Player::Update(RenderWindow &rw, View &view) override {
     Movement(view);
     apuntar(rw);
 }
@@ -56,10 +57,10 @@ float Player::GetRotation(){
     return sprite.getRotation();
 }
 
-Vector2f Player::GetPosition(){
+Vector2f Player::GetPosition() const override {
     return sprite.getPosition();
 }
 
-void Player::draw(RenderTarget &rt, RenderStates rs) const{
-    rt.draw(sprite,rs);
+void Player::draw(RenderTarget &target, RenderStates states) const override {
+    target.draw(sprite, states);
 }
