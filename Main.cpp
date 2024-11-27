@@ -7,6 +7,7 @@
 #include "GameEntity.h" 
 #include <memory> // Para std::unique_ptr
 #include <vector>
+#include <utility> // Para std::pair
 
 using namespace std;
 using namespace sf;
