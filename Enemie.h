@@ -17,7 +17,7 @@ class Enemie : public GameEntity {
         void apuntarPlayer(Vector2f);
     public:
         Enemie(Vector2f, Texture&);
-        void Update(Vector2f, int) ) override; // Sobrescribir el método Update
+        void Update(Vector2f, int) override; // Sobrescribir el método Update
         Vector2f GetPosition() const override; // Sobrescribir el método GetPosition
         void TakeHp();
         int ConsultHp();
